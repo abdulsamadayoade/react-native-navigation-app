@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Inventory, Activities, Settings } from "../screens";
+import { Inventory, Activities, Settings } from "../screens";
+import HomeStack from "./stacks/HomeStack";
 import {
   HomeIcon,
   InventoryIcon,
@@ -34,8 +35,9 @@ const TabNavigation = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStack}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <HomeIcon stroke={focused ? COLORS.secondary : COLORS.primary} />
           ),
