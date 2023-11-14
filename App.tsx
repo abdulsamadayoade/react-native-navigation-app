@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { StyleSheet, Text, View } from "react-native";
+import RootNavigation from "./app/navigation/RootNavigation";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,18 +22,5 @@ export default function App() {
 
   if (!fontsLoaded) return null;
 
-  return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+  return <RootNavigation onReady={onLayoutRootView} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
