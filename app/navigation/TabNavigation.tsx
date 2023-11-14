@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Inventory, Activities, Settings } from "../screens";
+import { Activities, Settings } from "../screens";
 import HomeStack from "./stacks/HomeStack";
+import InventoryDrawer from "./drawers/InventoryDrawer";
 import {
   HomeIcon,
   InventoryIcon,
@@ -45,8 +46,9 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Inventory"
-        component={Inventory}
+        component={InventoryDrawer}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <InventoryIcon
               fill={focused ? COLORS.secondary : COLORS.primary}
